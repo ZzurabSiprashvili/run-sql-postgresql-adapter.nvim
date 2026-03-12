@@ -39,9 +39,9 @@ function M.run(connection, query)
   if exit_code == 0 then
     -- Copy output to clipboard
     vim.fn.setreg('+', output)
-    vim.notify("\nQuery executed and results copied to clipboard")
+    vim.notify("\nQuery executed and results copied to clipboard", vim.log.levels.INFO, { title = "PostgreSQL" })
   else
-    vim.notify("\nQuery failed:\n" .. output, vim.log.levels.ERROR)
+    vim.notify("\nQuery failed:\n" .. output, vim.log.levels.ERROR, { title = "PostgreSQL" })
   end
 end
 
