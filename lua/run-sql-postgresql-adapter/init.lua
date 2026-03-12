@@ -18,10 +18,9 @@ function M.connect(config)
   }
 end
 
-function M.execute(connection, query)
-  -- Execute SQL query using psql
-  vim.notify("Executing PostgreSQL query...")
-  -- Implementation here
+function M.run(connection, query)
+  -- For now, just log the query
+  vim.notify("PostgreSQL adapter running query:\n" .. query, vim.log.levels.INFO)
 end
 
 return M
